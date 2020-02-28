@@ -72,6 +72,7 @@ public class CharacterController2D : MonoBehaviour {
 
 
     public void Move(float move, bool crouch, bool jump) {
+
         if (!crouch) {
             if (Physics2D.OverlapCircle(ceilingPosition.position, ceilingRadius, groundLayers)) {
                 // the player cannot currently stand up
@@ -107,6 +108,7 @@ public class CharacterController2D : MonoBehaviour {
                     OnCrouchEvent.Invoke(false);
                 }
             }
+
 
             // what speed do we want to travel?
             Vector3 targetVelocity = new Vector2(move * movementSpeed, GetComponent<Rigidbody2D>().velocity.y);
